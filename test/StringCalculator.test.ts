@@ -9,4 +9,7 @@ describe("When a expression is given, should", () => {
         expect(calculate(null as unknown as string)).toBe(0);
     })
 
+    it("return the same number given as an expression", () => {
+        expect("5").toBe(5)
+    })
 })
