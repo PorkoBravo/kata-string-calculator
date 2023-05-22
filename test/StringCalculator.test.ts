@@ -10,6 +10,6 @@ describe("When a expression is given, should", () => {
     })
 
     it("return the same number given as an expression", () => {
-        expect("5").toBe(5)
+        expect(calculate("5")).toBe(5)
     })
 })
