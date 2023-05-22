@@ -2,6 +2,10 @@ export function calculate(expression: string): number {
     if(!!!expression) {
         return 0;
     }
-    const numericExpresion: number = parseInt(expression)
-    return numericExpresion;
+
+    const sum = expression.split(",").map( element => {
+        return parseInt(element);
+    }).reduce((a,b) => a+b)
+
+    return sum
 }

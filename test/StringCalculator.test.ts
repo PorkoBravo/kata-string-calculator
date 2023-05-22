@@ -14,6 +14,6 @@ describe("When a expression is given, should", () => {
     })
 
     it("return the sum of all numbers separates by comma", () => {
-        expect("2,2").toBe(4)
+        expect(calculate("2,2")).toBe(4)
     })
 })
