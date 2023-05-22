@@ -12,4 +12,8 @@ describe("When a expression is given, should", () => {
     it("return the same number given as an expression", () => {
         expect(calculate("5")).toBe(5)
     })
+
+    it("return the sum of all numbers separates by comma", () => {
+        expect("2,2").toBe(4)
+    })
 })
