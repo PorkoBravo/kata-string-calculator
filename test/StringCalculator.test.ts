@@ -22,14 +22,14 @@ describe("When a expression is given, should", () => {
     })
 
     it("sum all numbers given a specific delimiter", () => {
-        expect(calculate("//|10|10|20")).toBe(40)
+        expect(calculate("//|/10|10|20")).toBe(40)
     })
 
     it.each([
         ["1, 2, 3", 6],
         ["0, 0, 0", 0],
-        ["//#25#25", 50],
-        ["//-1-5-4", 10]
+        ["//#/25#25", 50],
+        ["//-/1-5-4", 10]
       ])('Sum the numbers specificed in the expression %s and returns %s', (expression, expectedResult) => {
         expect(calculate(expression)).toBe(expectedResult)
       });
