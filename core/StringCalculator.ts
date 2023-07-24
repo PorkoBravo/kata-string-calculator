@@ -12,7 +12,11 @@ export function calculate(expression: string): number {
 
 function separateElementsOf(expression: string): string[] {
     const SEPARATOR = ","
-    return expression.split(SEPARATOR)
+    if(expression.startsWith("//")) {
+        return expression.split(expression.charAt(2).toString())
+    } else {
+        return expression.split(SEPARATOR)
+    }
 }
 
 function isFalsy(expression: string): boolean {
