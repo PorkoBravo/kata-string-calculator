@@ -11,13 +11,14 @@ export function calculate(expression: string): number {
 
 function separateElementsOf(expression: string): string[] {
     const DEFAULT_SEPARATOR = ","
-    const INITIAL_DELIMITER_CONFIGURATION = "//"
-
-    if(expression.startsWith(INITIAL_DELIMITER_CONFIGURATION)) {
-        return expression.split(expression.charAt(2).toString())
-    } else {
+    const DELIMITER_CONFIGURATION_REGEXP: RegExp = /^\/\/([^\/\d]+)\//
+    
+    const delimiter = expression.match(DELIMITER_CONFIGURATION_REGEXP)?.[1]
+    if(!!!delimiter) {
         return expression.split(DEFAULT_SEPARATOR)
     }
+
+    return expression.replace(DELIMITER_CONFIGURATION_REGEXP,'').split(delimiter)
 }
 
 function isFalsy(expression: string): boolean {
