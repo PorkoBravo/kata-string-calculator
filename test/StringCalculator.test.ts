@@ -22,6 +22,6 @@ describe("When a expression is given, should", () => {
     })
 
     it("sum all numbers given a specific delimiter", () => {
-        expect(calculate("10|10|20")).toBe(40)
+        expect(calculate("\\|10|10|20")).toBe(40)
     })
 })
