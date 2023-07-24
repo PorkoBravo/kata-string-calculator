@@ -1,4 +1,3 @@
-
 export function calculate(expression: string): number {
     if (isFalsy(expression)) {
         return 0;
@@ -11,11 +10,13 @@ export function calculate(expression: string): number {
 }
 
 function separateElementsOf(expression: string): string[] {
-    const SEPARATOR = ","
-    if(expression.startsWith("//")) {
+    const DEFAULT_SEPARATOR = ","
+    const INITIAL_DELIMITER_CONFIGURATION = "//"
+
+    if(expression.startsWith(INITIAL_DELIMITER_CONFIGURATION)) {
         return expression.split(expression.charAt(2).toString())
     } else {
-        return expression.split(SEPARATOR)
+        return expression.split(DEFAULT_SEPARATOR)
     }
 }
 
