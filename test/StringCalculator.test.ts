@@ -13,11 +13,15 @@ describe("When a expression is given, should", () => {
         expect(calculate("5")).toBe(5)
     })
 
-    it("sum of all numbers separates by comma", () => {
+    it("sum all numbers separated by comma", () => {
         expect(calculate("2,2")).toBe(4)
     })
 
     it("ignoring non numeric symbols", () => {
         expect(calculate("2,a,b,c,2")).toBe(4)
+    })
+
+    it("sum all numbers given a specific delimiter", () => {
+        expect(calculate("10|10|20")).toBe(40)
     })
 })
